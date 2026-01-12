@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration - Endlesspath</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="register-page">
+        <div class="container-small">
+            <button class="btn-back" onclick="location.href='index.html'">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Home
+            </button>
+            
+            <div class="card register-card">
+                <div class="register-header">
+                    <div class="register-icon blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <img src"./images/logo.JPEG">
+                        </svg>
+                    </div>
+                    <h1 class="register-title">Sign Up as Customer</h1>
+                    <p class="register-subtitle">Create your account to find trusted mechanics</p>
+                </div>
+                
+                <form id="customerRegisterForm" class="form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter password" required minlength="6">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required minlength="6">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-blue btn-full" id="submitBtn">
+                        Create Account
+                    </button>
+                    
+                    <p class="form-footer">
+                        Already have an account? <a href="#" class="link-blue">Sign In</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div id="toast" class="toast"></div>
+    <script src="js/api.js"></script>
+    <script src="js/customer-register.js"></script>
+</body>
+</html>

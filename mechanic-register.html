@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanic Registration - MechanicConnect</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="register-page">
+        <div class="container-medium">
+            <button class="btn-back" onclick="location.href='index.html'">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Home
+            </button>
+            
+            <div class="card register-card">
+                <div class="register-header">
+                    <div class="register-icon orange">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <img src ="./images/logo.JPEG">
+                        </svg>
+                    </div>
+                    <h1 class="register-title">Join as Mechanic</h1>
+                    <p class="register-subtitle">Create your professional profile and start getting jobs</p>
+                </div>
+                
+                <form id="mechanicRegisterForm" class="form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Smith" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Enter password" required minlength="6">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required minlength="6">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="specialization">Specialization</label>
+                        <select id="specialization" name="specialization" required>
+                            <option value="">Select your specialization</option>
+                            <option value="engine">Engine Specialist</option>
+                            <option value="brakes">Brake & Suspension</option>
+                            <option value="electrical">Electrical Systems</option>
+                            <option value="transmission">Transmission</option>
+                            <option value="body">Body Work & Paint</option>
+                            <option value="general">General Mechanic</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="experience">Years of Experience</label>
+                            <input type="number" id="experience" name="experience" placeholder="5" min="0" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" name="location" placeholder="Downtown, City" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="priceRange">Hourly Rate Range</label>
+                        <input type="text" id="priceRange" name="priceRange" placeholder="$50-$100/hr" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-orange btn-full" id="submitBtn">
+                        Create Mechanic Account
+                    </button>
+                    
+                    <p class="form-footer">
+                        Already have an account? <a href="#" class="link-orange">Sign In</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div id="toast" class="toast"></div>
+    <script src="js/api.js"></script>
+    <script src="js/mechanic-register.js"></script>
+</body>
+</html>

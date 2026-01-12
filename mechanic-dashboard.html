@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanic Dashboard - MechanicConnect</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header dashboard-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg class="logo-icon orange" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <img src="./images/logo.JPEG">
+                    </svg>
+                    <span class="logo-text">Endlesspath</span>
+                </div>
+                <div class="header-user">
+                    <span id="userName">Welcome</span>
+                    <button class="btn btn-ghost" onclick="logout()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-content">
+        <div class="container">
+            <div class="dashboard-header-section">
+                <h1>Mechanic Dashboard</h1>
+                <p>Manage your jobs and grow your business</p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-info">
+                            <p class="stat-label">Total Jobs</p>
+                            <p class="stat-value">24</p>
+                        </div>
+                        <div class="stat-icon blue">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-info">
+                            <p class="stat-label">Completed</p>
+                            <p class="stat-value">18</p>
+                        </div>
+                        <div class="stat-icon green">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-info">
+                            <p class="stat-label">In Progress</p>
+                            <p class="stat-value">3</p>
+                        </div>
+                        <div class="stat-icon orange">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-info">
+                            <p class="stat-label">Earnings</p>
+                            <p class="stat-value">$4,250</p>
+                        </div>
+                        <div class="stat-icon green">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Card -->
+            <div class="card profile-card">
+                <h3>Your Profile</h3>
+                <p class="card-subtitle">Your professional information</p>
+                <div class="profile-content">
+                    <div class="profile-avatar">M</div>
+                    <div class="profile-info">
+                        <div class="profile-name-row">
+                            <h3 id="profileName">Mechanic Name</h3>
+                            <span class="badge badge-success">Verified</span>
+                        </div>
+                        <div class="profile-details">
+                            <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+                            <p><strong>Specialization:</strong> <span id="profileSpec">General Mechanic</span></p>
+                            <p><strong>Experience:</strong> <span id="profileExp">5</span> years</p>
+                            <p class="profile-location">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <span id="profileLocation">Location</span>
+                            </p>
+                        </div>
+                        <button class="btn btn-outline">Edit Profile</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Available Jobs -->
+            <div class="jobs-section">
+                <h2>Available Jobs Near You</h2>
+                <div id="jobsList">
+                    <div class="loading">Loading jobs...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <script src="js/api.js"></script>
+    <script src="js/mechanic-dashboard.js"></script>
+</body>
+</html>
